@@ -22,11 +22,9 @@
   }
 
   header {
-    height: 100%;
     max-width: 100%;
     padding-top: 10px;
     margin-left: 10px;
-
   }
 
   .navcontainer {
@@ -36,8 +34,7 @@
     margin-bottom: 10px;
   }
 
-  .selected 
-  .navitem {
+  .selected {
     display: block;
   }
 
@@ -66,7 +63,6 @@
   }
 
   header {
-    height: 100%;
     max-width: 140px;
     padding-top: 100px;
     margin-left: 20px;
@@ -78,9 +74,7 @@
     margin-left: 20px;
     box-shadow: inset -5px 0px 30px 5px #0015;
   }
-  .navitem {
-    display: block;
-  }
+
   .navarrow {
     display: block;
     box-shadow: inset 5px -10px 30px 5px #0015;
@@ -111,14 +105,14 @@ body {
   --c1b: #1A1C25;
 /*c2 are midtones used for tags and nav items. light blue for writing, dark blue for IT related. purple for computer games. bourgoundy for RL games. red for visual. orange audiovisiual. yellow visual. light green for food, dk green for ecoactivism. pale for structure tags like short or long */
   --c2a: #5B1623;
-  --c2b: #506665;
+  --c2b: #354645;
   --c2c: #305439;
   --c2d: #4B8633;
   --c2e: #94281C;
+  --c2f: #403A32;
   --c4: #D2D2BF;
 
   background-color: var(--c0);
-  background-image: url("organiclinesnarrow.svg");
   color: var(--c4);
   display: flex;
   margin: 0px;
@@ -130,6 +124,7 @@ body {
 
 
 header {
+  height: 100%;
   min-width: 140px;
   font-family: 'Quicksand', sans-serif;
   white-space: nowrap;
@@ -137,9 +132,11 @@ header {
 }
 
 .navitem {
+  display: block;
   color: var(--c4);
   padding: 10px;
-  font-weight: 600
+  font-weight: 600;
+  text-decoration:none; 
 }
 
 .navitem:hover {
@@ -151,15 +148,6 @@ header {
   transition-property: margin-left, background-color, color;
   transition-duration: .1s;
   transition-timing-function: ease-out;
-}
-
-.selected {
-  background-color: var(--c4);
-  padding: 10px;
-  color: var(--c1);
-  padding: 10px 10px;
-  font-weight: 600;
-  font-weight: 800
 }
 
 .navarrow {
@@ -179,18 +167,33 @@ header {
   background-color: var(--c2a)
 }
 
-.code {
+.shortform,
+.longform {
+  background-color: var(--c2f);
+}
+
+.web {
   background-color: var(--c2b)
 }
 
-.visual {
+.image {
   background-color: var(--c2c)
+}
+
+.selected {
+  background-color: var(--c4);
+  padding: 10px;
+  color: var(--c1);
+  padding: 10px 10px;
+  font-weight: 600;
+  font-weight: 800
 }
 
 .tag {
   margin: 0px 5px 5px 0;
   padding: 0px 5px;
 }
+
 #tags {
   margin: 0 0 10px 0;
   justify-content: flex-end;
@@ -215,6 +218,5 @@ h1 {
 
 main {
   background-color: var(--c1);
-  background-image: url("organiclines.svg");
   background-size: cover;
 }
