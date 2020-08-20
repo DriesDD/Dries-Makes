@@ -172,7 +172,8 @@ header {
   background-color: var(--c2f);
 }
 
-.web {
+.web,
+.code {
   background-color: var(--c2b)
 }
 
