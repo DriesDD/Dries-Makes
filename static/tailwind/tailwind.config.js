@@ -1,7 +1,7 @@
 module.exports = {
   purge: {
-    enabled: false,
-    content: ['../index.html']
+    enabled: true,
+    content: ['../../templates/layout.html']
   },
   theme: {
     flex: {
