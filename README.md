@@ -1,2 +1,0 @@
-# Dries-Makes
-Personal blog

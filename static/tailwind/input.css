@@ -1,0 +1,24 @@
+/*
+npx tailwindcss build input.css -o style.css
+*/
+
+/*pixel perfect HTML: <div id="mockup"></div>
+CSS:
+#mockup {
+  width: 332px;
+  height: 516px;
+  background-image: url(https://raw.githubusercontent.com/becodeorg/gnt-yu-3-21/master/1.The-Field/5.End-of-Field/1.Trial-Run/images/13.ui-chart-2.png?token=AAFTYPC4SCNSITCGMEUCNLS7BBK7I);
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  opacity: 0.5;
+  z-index: 10;
+  pointer-events: none;
+}
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
