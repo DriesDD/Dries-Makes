@@ -22,7 +22,8 @@ def article(page):
 
 #every page is listed here as [URL resource name, HTML file path, title]
 PAGES = [
-    ['arts','/articles/arts.html','Arts overview','pink','Dec 2, 2020'],
+    ['reads','/articles/reads.html','Overview of reads','green','Dec 2, 2020'],
+    ['art','/articles/art.html','Art overview','pink','Dec 2, 2020'],
     ['webdev','/articles/webdev.html','Web dev overview','blue','Dec 2, 2020'],
     ['home','/articles/home.html','Welcome','green','Dec 2, 2020'],
     ['about','/articles/about.html','About me','gray','Dec 1, 2020'],
