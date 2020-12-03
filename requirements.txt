@@ -1,4 +1,4 @@
 Flask>=0.11.0
 Jinja2>=2.7
 Werkzeug>=0.9.1
-Waitress>=1.4.4
+waitress==1.4.4
