@@ -880,6 +880,11 @@ video {
   color: rgba(5, 150, 105, var(--tw-text-opacity));
 }
 
+.text-green-700 {
+  --tw-text-opacity: 1;
+  color: rgba(4, 120, 87, var(--tw-text-opacity));
+}
+
 .text-green-800 {
   --tw-text-opacity: 1;
   color: rgba(6, 95, 70, var(--tw-text-opacity));
@@ -942,6 +947,10 @@ video {
 
 .overflow-clip {
   text-overflow: clip;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .align-middle {
