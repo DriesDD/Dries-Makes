@@ -1,6 +1,7 @@
 from flask import Flask, redirect, render_template, request
 import json
 import traceback
+import os
 from waitress import serve
 
 app = Flask(__name__)
@@ -30,4 +31,6 @@ PAGES = [
 pagecount = len(PAGES)
 
 if __name__ == "__main__":
-   serve(app, host='0.0.0.0', port=8000)
+    app.debug = False
+    port = int(os.environ.get('PORT', 33507))
+    waitress.serve(app, port=port)
