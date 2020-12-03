@@ -26,7 +26,7 @@ PAGES = [
     ['art','/articles/art.html','Art overview','pink','Dec 2, 2020'],
     ['webdev','/articles/webdev.html','Web dev overview','blue','Dec 2, 2020'],
     ['home','/articles/home.html','Welcome','green','Dec 2, 2020'],
-    ['about','/articles/about.html','About me','gray','Dec 1, 2020'],
+    ['about','/articles/about.html','Dries De Decker','gray','Dec 1, 2020'],
     ]
 
 pagecount = len(PAGES)
