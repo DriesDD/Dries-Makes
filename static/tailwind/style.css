@@ -1170,6 +1170,11 @@ video {
     visibility: visible;
   }
 
+  .md\:break-normal {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
   .md\:grid-cols-10 {
     grid-template-columns: repeat(10, minmax(0, 1fr));
   }
