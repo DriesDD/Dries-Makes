@@ -586,6 +586,8 @@ pre {
   padding: 1rem;
   --tw-text-opacity: 1;
   color: rgba(110, 231, 183, var(--tw-text-opacity));
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
 code {
