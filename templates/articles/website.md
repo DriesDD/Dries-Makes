@@ -43,11 +43,9 @@ The pages then each need to 'extend' the layout using {% extends "layout.html" %
 
 The code of build.py would look something like this:
 
-
+```
 #Import flask and the functions to redirect and render pages
 from flask import Flask, redirect, render_template
-
-```
 
 #name of our app
 app = Flask(__name__)
