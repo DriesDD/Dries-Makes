@@ -109,9 +109,9 @@ app.run(debug=True)
     since it's not really made for production environments. I used a Flask module called 'waitress'. The end of my
     build.py script now looks like this:</p>
 <pre>if __name__ == "__main__":
-app.debug = False
-port = int(os.environ.get('PORT', 33507))
-waitress.serve(app, port=port)
+    app.debug = False
+    port = int(os.environ.get('PORT', 33507))
+    waitress.serve(app, port=port)
 </pre>
 <p>I also kept a seperate file to still build locally using the built-in flask run function.</p>
 <p>Now for a little list that I wish someone had told me. To make sure that Flask and all its modules work on the
