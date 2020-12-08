@@ -95,6 +95,7 @@ gunicorn&19.6.0
 │   └── layout.html
 └── static</pre><p>The static folder contains all CSS, javascript, images and other static resources.</p>
     <p>With the site hosted as a Heroku app, I still had to connect it to my personal domain. This requires verifying your Heroku account with a visa or mastercard, but it's free. Then, I had some security issues - adding a security certificate to Heroku is not free, and my own domain didn't trust the Heroku site so the user was greeted with a notification that the site is untrusted. Fortunately, I found out how to set it up right in the Advanced DNS settings:</p>
+<img src="../../static/img/DNS.png" alt="Screenshot of the DNS configuration showing a redirect URL to dries.herokuapp.com">
     <p>Makes sense if you see it like that, but in my mind a redirect from my domain to the heroku domain would make the user see heroku in the address bar. Not the case! We have added our personal domain in Heroku, and so Heroku will serve to our domain, using the security certificate from our own domain. No extra certificate on Heroku needed.</p>
     <p>That was the final piece of the puzzle. If you read this far, thank you! I hope this article can be useful to my fellow junior devs.</p>
     <p>Dries out!</p>
