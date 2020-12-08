@@ -123,7 +123,7 @@ app.run(debug=True)
         <code>gunicorn -b :5000 --access-logfile - --error-logfile - build:app</code></li>
     <li>runtime.txt, which specifies which python version to run. For example, in my case the contents of the file are simply <code>python-3.8.5</code>. This file is not strictly required but it's useful to avoid issues related to having a
         different python version locally and on the server.</li>
-    <li>requirementts.txt. This is a file which you may see in any python project, it lists the requiremed modules and
+    <li>requirements.txt. This is a file which you may see in any python project, it lists the requiremed modules and
         their version. For our project, the dependencies are:
         <pre>Flask&0.11.0
 Jinja2==2.7
