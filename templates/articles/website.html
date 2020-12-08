@@ -120,7 +120,7 @@ app.run(debug=True)
     <li>A procfile with a build command. I used <code>web: gunicorn build:app</code>. A procfile is just a file without an extension,
         called PROCFILE, which contains commands that Heroku will run automatically when the app is uploaded.</li>
     <li>run.gunicorn.sh, which is the bash command referenced in the procfile. The contents in my case are
-        <code>gunicorn -b :5000 --access-logfile - --error-logfile - build:app</code></li>
+        <code>gunicorn -b :5000 --access-logfile - --error-logfile - build:app</code> where <code>build</code> is the name of my build file (build.py) and <code>app</code> is the name of my app, in the file.</li>
     <li>runtime.txt, which specifies which python version to run. For example, in my case the contents of the file are simply <code>python-3.8.5</code>. This file is not strictly required but it's useful to avoid issues related to having a
         different python version locally and on the server.</li>
     <li>requirements.txt. This is a file which you may see in any python project, it lists the requiremed modules and
