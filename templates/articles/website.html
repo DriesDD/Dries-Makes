@@ -117,7 +117,7 @@ app.run(debug=True)
 <p>Now for a little list that I wish someone had told me. To make sure that Flask and all its modules work on the
     server, I needed to add these files in my root directory:</p>
 <ul>
-    <li>A procfile with a build command. I used web: <code>gunicorn build:app</code>. A procfile is just a file without an extension,
+    <li>A procfile with a build command. I used <code>web: gunicorn build:app</code>. A procfile is just a file without an extension,
         called PROCFILE, which contains commands that Heroku will run automatically when the app is uploaded.</li>
     <li>run.gunicorn.sh, which is the bash command referenced in the procfile. The contents in my case are
         <code>gunicorn -b :5000 --access-logfile - --error-logfile - build:app</code></li>
