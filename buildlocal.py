@@ -1,6 +1,7 @@
 from flask import Flask, redirect, Markup, render_template, request
 import waitress as waitress
 from waitress import serve
+import os
 
 app = Flask(__name__)
 
@@ -25,7 +26,7 @@ def article(page):
         html = "<div class='flex'>"
         for i in pagedetails[4]:
             carddetails = next(j for j in ARTICLES if j[0] == i)
-            html += "<div class='flex-initial text-left font-display font-semibold py-2 px-4 text-"+carddetails[3]+"-200 bg-"+carddetails[3]+"-800 hover:bg-"+carddetails[3]+"-600 focus:bg-"+carddetails[3]+"-100 h-48 w-48 mr-4 mb-4'><a href=/'"+carddetails[0]+"'><span class='block text-right'>"+carddetails[4]+"</span><h3 class='font-display overflow-hidden font-semibold text-2xl'>"+carddetails[2]+"</h3></a></div>"
+            html += "<div class='flex-initial text-left font-display font-semibold py-2 px-4 text-"+carddetails[3]+"-200 bg-"+carddetails[3]+"-800 hover:bg-"+carddetails[3]+"-600 focus:bg-"+carddetails[3]+"-100 h-48 w-48 mr-4 mb-4'><a href=/"+carddetails[0]+"><span class='block text-right'>"+carddetails[4]+"</span><h3 class='font-display overflow-hidden font-semibold text-2xl'>"+carddetails[2]+"</h3></a></div>"
         html += "</div>"
         html = Markup(html)
         return render_template(pagedetails[1],
@@ -48,4 +49,11 @@ OVERVIEWS = [
     ['home','/overviews/home.html','All articles','green',['website','about']]
     ]
 
-app.run(debug=True)
+#this works after you do 'heroku config:set ON_HEROKU=1'
+if 'ON_HEROKU' in os.environ:
+    if __name__ == "__main__":
+        app.debug = False
+        port = int(os.environ.get('PORT', 33507))
+        waitress.serve(app, port=port)
+else:
+    app.run(debug=True)

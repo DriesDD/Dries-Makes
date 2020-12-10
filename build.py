@@ -49,11 +49,7 @@ OVERVIEWS = [
     ['home','/overviews/home.html','All articles','green',['website','about']]
     ]
 
-#this works after you do 'heroku config:set ON_HEROKU=1'
-if 'ON_HEROKU' in os.environ:
-    if __name__ == "__main__":
-        app.debug = False
-        port = int(os.environ.get('PORT', 33507))
-        waitress.serve(app, port=port)
-else:
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.debug = False
+    port = int(os.environ.get('PORT', 33507))
+    waitress.serve(app, port=port)
