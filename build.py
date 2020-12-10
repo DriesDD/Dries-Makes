@@ -46,8 +46,8 @@ OVERVIEWS = [
     ['404','/overviews/404.html','Page not found!','red',[]],
     ['reads','/overviews/reads.html','Overview of reads','green',[]],
     ['art','/overviews/art.html','Art overview','pink',[]],
-    ['webdev','/overviews/webdev.html','Web dev overview','blue',['website']],
-    ['home','/overviews/home.html','All articles','green',['website','about']]
+    ['webdev','/overviews/webdev.html','Web dev overview','blue',['spacesnake','website']],
+    ['home','/overviews/home.html','All articles','green',['spacesnake','website','about']]
     ]
 
 #serve the file. This works on heroku after you CLI 'heroku config:set ON_HEROKU=1'
