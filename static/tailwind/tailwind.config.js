@@ -3,6 +3,7 @@ module.exports = {
     enabled: true,
     content: ['../../templates/*.html','../../templates/articles/*.html','dynamic.html']
   },
+  darkMode: 'media',
   theme: {
     flex: {
       '1': '1 1 12%',

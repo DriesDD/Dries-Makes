@@ -26,7 +26,7 @@ def article(page):
         html = "<div class='flex flex-row'>"
         for i in pagedetails[4]:
             carddetails = next(j for j in ARTICLES if j[0] == i)
-            html += "<div class='flex-initial text-left font-display font-semibold py-2 px-4 text-"+carddetails[3]+"-200 bg-"+carddetails[3]+"-800 hover:bg-"+carddetails[3]+"-600 focus:bg-"+carddetails[3]+"-100 h-48 w-48 mr-4 mb-4'><a href=/"+carddetails[0]+"><span class='block text-right'>"+carddetails[4]+"</span><h3 class='font-display overflow-hidden font-semibold text-2xl'>"+carddetails[2]+"</h3></a></div>"
+            html += "<div class='flex-initial text-left font-display font-semibold py-2 px-4 text-"+carddetails[3]+"-200 bg-"+carddetails[3]+"-800 hover:bg-"+carddetails[3]+"-600 focus:bg-"+carddetails[3]+"-100 h-48 w-48 mr-4 mb-4'><a href=/"+carddetails[0]+"><span class='block text-right'>"+carddetails[4]+"</span><h3 class='font-display overflow-hidden font-semibold h-full text-2xl'>"+carddetails[2]+"</h3></a></div>"
         html += "</div>"
         html = Markup(html)
         return render_template(pagedetails[1],
@@ -34,6 +34,7 @@ def article(page):
 
 #every article is listed here as [URL resource name, HTML file path, title, color,date]
 ARTICLES = [
+    ['spacesnake','/articles/spacesnake.html','Space Snake: Unleashed','blue','Dec 11, 2020'],
     ['website','/articles/website.html','Making this website using Flask and Heroku','blue','Dec 8, 2020'],
     ['about','/articles/about.html','Dries De Decker','gray','Dec 1, 2020']
     ]

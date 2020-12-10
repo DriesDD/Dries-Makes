@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+</p>Scroll down for a Javascript game I made for a coding class exercise. Our first chance to get creative with a real programming language. I got my inspiration from some very old games: 'Snake' and sidescrolling shooters like 'R-type'.</p>
+</p>We only had a few days so I dove in without preparation. After finishing, the coach sent me an article on how JS games are usually made - using a main loop instead of several parallel ones, and using the canvas element instead of using a shifting HTML table to imitate 'pixels'. I suppose you could compare it to having painted with a sponge and then learning brushes exist. I'm sure you could make a fine painting using sponges, if you don't mind the strange looks.</p>
+</p>Later we learned about Object-Oriented Programming and SOLID and while these are very useful principles, I couldn't help but feel that programming is a lot slower when you try to do everything the right way. For small and solo projects, it can be better to just do things in whichever way feels productive and fun. If I had been a perfectionist, this game might not even exist!</p>
+</p>Anyway, enjoy SPACE SNAKE: UNLEASHED.</p>
+<p>It goes well with synthwave music.</p>
+</br>
+
+<script src="../../static/scripts/spacesnakegame.js" defer></script>
+<link rel="stylesheet" href="../../static/tailwind/spacesnake.css">
+
+<div id="cinema" class="relative">
+<div class="bg-black" style="  height: 100vh;
+width: calc(100vw - 16px);
+position: absolute;
+left: 50%;
+margin-left: -50vw;
+top: 100px;
+right: 0;
+margin-top: auto;
+border-top: 14px solid #18181B;">
+</div>
+<div class="font-mono text-lg text-gray-400 grid grid-cols-1 mt-8" style="  height: 640px;
+width: 1256px;
+position: absolute;
+left: 50%;
+margin-left: -624px;
+top: calc(100px - 192px + 30vh);
+margin-top: auto;">
+    <div id="spacesnakegameui" class="col-span-1 grid grid-cols-4">
+        <div class="col-span-1">Health: <table>
+                <tr>
+                    <td class="healthblock py-4 px-4 bg-green-500"></td>
+                    <td class="healthblock py-4 px-4 bg-green-500"></td>
+                    <td class="healthblock py-4 px-4 bg-green-500"></td>
+                    <td class="healthblock py-4 px-4 bg-gray-500"></td>
+                    <td class="healthblock py-4 px-4 bg-gray-500"></td>
+                </tr>
+            </table>
+        </div>
+        <div id='wavemsg' class="col-span-1"></div>
+        <div id='difficulty' class="col-span-1"></div>
+        <div id="gametime" class="col-span-1">Paused</div>
+    </div>
+    <container class="relative invisible lg:visible">
+
+        <div id="background" class="absolute visible top-0 bottom-0 left-0 right-0 bg-cover"
+            style="background-image:url('../../static/img/spacesnakebg.png')"></div>
+        <div id="spacesnakegame" class="static mx-auto col-span-1 visible"></div>
+        <div id="menu"
+            class="visible absolute top-1/4 bottom-1/4 left-1/4  right-1/4 grid cols-3 gap-4 bg-gray-900 text-2xl text-center px-4 py-4">
+            <div class="absolute p-32 text-center visible lg:invisible bg-red-800">This game is not made for small screens. It's played with the arrow keys, so try it on a laptop or desktop!</div>
+            <span class="col-span-3"> SPACE SNAKE: UNLEASHED</span>
+            <span id="menutext" class="col-span-3">Move with the arrow keys. Avoid things. Don't hit your tail.
+                Survive as long as
+                you can.</span>
+            <button id="normal"
+                class="col-span-1 bg-gray-700 font-bold hover:text-gray-800 hover:bg-yellow-300 focus:bg-gray-600 focus:text-white">HARD</button>
+            <button id="hard"
+                class="col-span-1 bg-gray-700 font-bold hover:text-gray-800 hover:bg-yellow-300 focus:bg-gray-600 focus:text-white">SUPER
+                HARD</button>
+            <button id="extreme"
+                class="col-span-1 bg-gray-700 font-bold hover:text-gray-800 hover:bg-yellow-300 focus:bg-gray-600 focus:text-white">EXTREME</button>
+        </div>
+    </container>
+    <div id="gamemsg" class="col-span-1">Use the arrow keys to move.</div>
+</div>
+</div>
+{% endblock %}
