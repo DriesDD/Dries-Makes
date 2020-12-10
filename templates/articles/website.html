@@ -113,7 +113,8 @@ app.run(debug=True)
     port = int(os.environ.get('PORT', 33507))
     waitress.serve(app, port=port)
 </pre>
-<p>I also kept a separate file to still build locally using the built-in flask run function.</p>
+<p>To make sure the site can still be served on localhost, you can keep the old build file or add an if/else statement so python knows if it's running on the server or not. This can be achieved via environment variables. You could do <code>'heroku config:set ON_HEROKU=1'</code> in the terminal to add an environment variable to your app, and then add <code>if 'ON_HEROKU' in os.environ:</code> before running your serving code. Don't forget to <code>import os</code> at the start of build.py.
+</p>
 <p>Now for a little list that I wish someone had told me. To make sure that Flask and all its modules work on the
     server, I needed to add these files in my root directory:</p>
 <ul>
@@ -135,10 +136,10 @@ gunicorn==19.6.0</pre>
 <p>In case you are wondering, Werkzeug is a library that Flask uses, while Jinja2 is the templating language.</p>
 <p>Our project structure now looks like this:</p>
 <pre>├── build.py
-├── buildlocal.py
+├── buildlocal.py (optional)
 ├── PROCFILE
 ├── run.gunicorn.sh
-├── runtime.txt
+├── runtime.txt (optional)
 ├── requirements.txt
 ├── templates
 │   ├── articles
