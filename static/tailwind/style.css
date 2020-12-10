@@ -855,6 +855,10 @@ li {
   display: block;
 }
 
+.flex {
+  display: flex;
+}
+
 .table {
   display: table;
 }
@@ -865,6 +869,10 @@ li {
 
 .contents {
   display: contents;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-initial {
