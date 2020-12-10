@@ -38,7 +38,7 @@
     Laravel, Symfony, Ruby on Rails, Spring Boot, Django… The best web framework depends on the programming language you
     like and the complexity of your site. Most frameworks use a Model View Controller (MVC) structure, and are modular
     enough that differences will only matter if your project gets large or very specific.</p>
-<p>Most frameworks also come with a bunch of premade folders and files which seem overengineered for simple websites.
+<p>Most frameworks also come with a bunch of premade folders and files which seem over-engineered for simple websites.
     They’re not that complex once you are used to them, but since I wanted to use the minimal needed complexity, I chose
     a Python ‘microframework’ called Flask. It allows me to get a site going with one small python file, and add all the
     HTML elements in a folder called ‘templates’.</p>
@@ -93,7 +93,7 @@ app.run(debug=True)
     experience with a provider called CloudSigma, but couldn't get everything up and running within my free trial period
     and I wasn't willing to pay because I was unsure if I would run into other unforeseen issues with them. However, in
     the end, Heroku has everything I needed.</p>
-<p>First of all, if you like Flask but your site doesn't really need a server or much of a backend, you can take a big
+<p>First of all, if you like Flask but your site doesn't really need a server or much of a back-end, you can take a big
     shortcut here using a module called Frozen-Flask. It will turn your flask site into a static site so you don't have
     to worry about Heroku and dyno's and environments and credit cards at all. For everyone else, make sure to oil your
     search engines.</p>
@@ -113,7 +113,7 @@ app.run(debug=True)
     port = int(os.environ.get('PORT', 33507))
     waitress.serve(app, port=port)
 </pre>
-<p>I also kept a seperate file to still build locally using the built-in flask run function.</p>
+<p>I also kept a separate file to still build locally using the built-in flask run function.</p>
 <p>Now for a little list that I wish someone had told me. To make sure that Flask and all its modules work on the
     server, I needed to add these files in my root directory:</p>
 <ul>
