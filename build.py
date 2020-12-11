@@ -13,8 +13,8 @@ def home():
 def article(page):
     if any(page in a for a in ARTICLES):
         pagedetails = next(i for i in ARTICLES if i[0] == page)
-        nextdetails = ARTICLES[(ARTICLES.index(pagedetails) -1) % articlecount]
-        prevdetails = ARTICLES[(ARTICLES.index(pagedetails) +1) % articlecount]
+        prevdetails = ARTICLES[(ARTICLES.index(pagedetails) -1) % articlecount]
+        nextdetails = ARTICLES[(ARTICLES.index(pagedetails) +1) % articlecount]
         return render_template(pagedetails[1],
         article = pagedetails[1], title=pagedetails[2], color=pagedetails[3], date=pagedetails[4],
         nexttitle=nextdetails[2], nexturl=nextdetails[0],nextcolor=nextdetails[3],
@@ -36,7 +36,7 @@ def article(page):
 ARTICLES = [
     ['spacesnake','/articles/spacesnake.html','Space Snake: Unleashed','blue','Dec 11, 2020'],
     ['website','/articles/website.html','Making this website using Flask and Heroku','blue','Dec 8, 2020'],
-    ['about','/articles/about.html','Dries De Decker','gray','Dec 1, 2020']
+    ['about','/articles/about.html','About me','gray','Dec 1, 2020']
     ]
 
 articlecount = len(ARTICLES)

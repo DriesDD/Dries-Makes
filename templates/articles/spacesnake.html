@@ -1,16 +1,21 @@
 {% extends "layout.html" %}
 
+{% block head %}
+<meta name="description" content="Blog post on making a JS game.">
+<meta name="keywords" content="JavaScript, game, webgame, retro, snake">
+<script src="../../static/scripts/spacesnakegame.js" defer></script>
+<link rel="stylesheet" href="../../static/tailwind/spacesnake.css">
+{% endblock %}
+
 {% block content %}
 
 </p>Scroll down for a Javascript game I made for a coding class exercise. Our first chance to get creative with a real programming language. I got my inspiration from some games older than myself: 'Snake' and sidescrolling shooters like 'R-type'.</p>
 </p>We only had a few days so I dove in without preparation. After finishing, the coach sent me an article on how JS games are usually made - using a main loop instead of several parallel ones, and using the canvas element instead of using a shifting HTML table to imitate 'pixels'. I suppose you could compare it to having painted with a sponge and then learning brushes exist. You could make a fine painting using sponges, if you don't mind the strange looks.</p>
 </p>Later we learned about Object-Oriented Programming and SOLID and while these are very useful principles, I couldn't help but feel that programming is a lot slower when you try to do everything the right way. For small and solo projects, it can be better to just do things in whichever way feels productive and fun. If I had been a perfectionist, this game might not even exist!</p>
-</p>Anyway, enjoy SPACE SNAKE: UNLEASHED.</p>
-<p>It goes well with synthwave music.</p>
+</p>Anyway, enjoy <code>SPACE SNAKE: UNLEASHED.</code></p>
+<p>It goes well with Synthwave music like this:</p>
+<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1176814783&color=%23ffb806&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dries-de-decker" title="Dries" target="_blank" style="color: #cccccc; text-decoration: none;">Dries</a> · <a href="https://soundcloud.com/dries-de-decker/sets/spacesynth" title="SpaceSynth" target="_blank" style="color: #cccccc; text-decoration: none;">Space Synth</a></div>
 </br>
-
-<script src="../../static/scripts/spacesnakegame.js" defer></script>
-<link rel="stylesheet" href="../../static/tailwind/spacesnake.css">
 
 <div id="cinema" class="relative">
 <div class="bg-black" style="  height: 100vh;
