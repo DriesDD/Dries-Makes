@@ -23,10 +23,10 @@ def article(page):
         if not any(page in a for a in OVERVIEWS):
             page = '404'
         pagedetails = next(i for i in OVERVIEWS if i[0] == page)
-        html = "<div class='flex flex-row'>"
+        html = "<div class='flex flex-row flex-wrap -mx-4'>"
         for i in pagedetails[4]:
             carddetails = next(j for j in ARTICLES if j[0] == i)
-            html += "<div class='flex-initial shadow-sm text-left font-display font-semibold py-2 px-4 text-"+carddetails[3]+"-200 bg-"+carddetails[3]+"-800 hover:bg-"+carddetails[3]+"-600 focus:bg-"+carddetails[3]+"-100 h-48 w-48 mx-4 my-4'><a href=/"+carddetails[0]+"><span class='block text-right'>"+carddetails[4]+"</span><h3 class='font-display overflow-hidden font-semibold h-full text-2xl'>"+carddetails[2]+"</h3></a></div>"
+            html += "<div class='flex-none shadow-sm text-left font-display font-semibold py-2 px-4 text-"+carddetails[3]+"-200 bg-"+carddetails[3]+"-800 hover:bg-"+carddetails[3]+"-600 focus:bg-"+carddetails[3]+"-100 h-48 w-48 mx-2 my-2 sm:mx-4 sm:my-4'><a href=/"+carddetails[0]+"><span class='block text-right'>"+carddetails[4]+"</span><h3 class='font-display overflow-hidden font-semibold h-full text-2xl'>"+carddetails[2]+"</h3></a></div>"
         html += "</div>"
         html = Markup(html)
         return render_template(pagedetails[1],

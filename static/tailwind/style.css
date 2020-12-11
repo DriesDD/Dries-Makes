@@ -958,6 +958,10 @@ b {
   flex: 0 1 auto;
 }
 
+.flex-none {
+  flex: none;
+}
+
 .font-display {
   font-family: Quicksand, sans-serif;
 }
@@ -1002,14 +1006,19 @@ b {
   font-size: 8rem;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 .my-10 {
@@ -1020,6 +1029,11 @@ b {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.-mx-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
 .-my-16 {
@@ -1487,6 +1501,11 @@ b {
     margin-bottom: 1rem;
   }
 
+  .sm\:mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
   .sm\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -1538,9 +1557,9 @@ b {
     padding-bottom: 2rem;
   }
 
-  .md\:px-24 {
-    padding-left: 6rem;
-    padding-right: 6rem;
+  .md\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .md\:visible {
@@ -1561,11 +1580,6 @@ b {
   .lg\:px-48 {
     padding-left: 12rem;
     padding-right: 12rem;
-  }
-
-  .lg\:px-64 {
-    padding-left: 16rem;
-    padding-right: 16rem;
   }
 
   .lg\:visible {
