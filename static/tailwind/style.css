@@ -950,8 +950,8 @@ b {
   flex-wrap: wrap;
 }
 
-.flex-auto {
-  flex: 1 1 auto;
+.flex-1 {
+  flex: 1 1 12%;
 }
 
 .flex-initial {
@@ -1043,6 +1043,10 @@ b {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-w-1\/2 {
+  min-width: 50%;
 }
 
 .overflow-hidden {

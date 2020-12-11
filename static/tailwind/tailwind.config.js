@@ -13,6 +13,13 @@ module.exports = {
       inherit: 'inherit',
       none: 'none',
     },
+    minWidth: {
+      '0': '0',
+      '1/4': '25%',
+      '1/2': '50%',
+      '3/4': '75%',
+      'full': '100%',
+     },
     fontFamily: {
       display: ['Quicksand', 'sans-serif'],
       body: ['Roboto', 'sans-serif'],
