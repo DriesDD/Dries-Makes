@@ -13,6 +13,9 @@ module.exports = {
       inherit: 'inherit',
       none: 'none',
     },
+    boxShadow: {
+      sm: '16px 16px #18181B',
+    },
     minWidth: {
       '0': '0',
       '1/4': '25%',
