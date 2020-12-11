@@ -47,4 +47,14 @@ CSS:
   li {
     @apply mb-1 ml-8 ;
   }
+  u {
+    @apply underline ;
+  }
+  i {
+    @apply italic ;
+  }
+  b {
+    @apply font-bold ;
+  }
+  
 }

@@ -221,8 +221,7 @@ select { /* 1 */
 Correct the inability to style clickable types in iOS and Safari.
 */
 
-button,
-[type='button'] {
+button {
   -webkit-appearance: button;
 }
 
@@ -263,11 +262,6 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-
-[type='search'] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
 
 /**
 Remove the inner padding in Chrome and Safari on macOS.
@@ -609,6 +603,18 @@ ul {
 li {
   margin-bottom: 0.25rem;
   margin-left: 2rem;
+}
+
+u {
+  text-decoration: underline;
+}
+
+i {
+  font-style: italic;
+}
+
+b {
+  font-weight: 700;
 }
 
 .container {

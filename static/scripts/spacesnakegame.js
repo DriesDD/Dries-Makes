@@ -37,7 +37,7 @@ see https://textik.com/#c88e7e73e6589fe6 */
 
 //wrap everything in a function
 (() => {
-    const targetid = 'spacesnakegame'
+    const targetid = 'game'
     //screen width and screen height in number of tiles
     const sw = 40
     const sh = 20
