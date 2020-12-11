@@ -1006,14 +1006,8 @@ b {
   font-size: 8rem;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+.m-2 {
+  margin: 0.5rem;
 }
 
 .my-4 {
@@ -1165,11 +1159,6 @@ b {
 
 * {
   --tw-shadow: 0 0 #0000;
-}
-
-.shadow-sm {
-  --tw-shadow: 16px 16px #18181B;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 * {
@@ -1496,14 +1485,13 @@ b {
 }
 
 @media (min-width: 640px) {
+  .sm\:m-4 {
+    margin: 1rem;
+  }
+
   .sm\:my-4 {
     margin-top: 1rem;
     margin-bottom: 1rem;
-  }
-
-  .sm\:mx-4 {
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 
   .sm\:my-6 {
@@ -1519,6 +1507,11 @@ b {
   .sm\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .sm\:shadow-sm {
+    --tw-shadow: 16px 16px #18181B;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
   .sm\:align-middle {
