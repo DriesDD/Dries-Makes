@@ -8,13 +8,9 @@
     <meta name="author" content="Dries De Decker">
     {% block head %}
     {% endblock %}
-    <link rel="stylesheet" href="../static/tailwind/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400|Quicksand:wght@500;700|Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/tailwind/style.css">
     <style>
       ::-moz-selection, ::selection {
         color: white;
@@ -26,7 +22,7 @@
 <body class="bg-gray-900">
     <div class="overviews grid grid-cols-5 md:grid-cols-10 sm:gap-4 min-h-16 sm:my-4">
         <a href="/home"
-            class="col-span-2 break-words whitespace-nowrap text-2xl text-center font-display font-semibold p-2 text-red-400 bg-red-800 hover:bg-red-600  focus:bg-red-100">
+            class="col-span-2 break-words whitespace-nowrap text-2xl text-center font-display font-bold p-2 text-red-400 bg-red-800 hover:bg-red-600  focus:bg-red-100">
             dries.page
         </a>
 
@@ -46,22 +42,22 @@
         </div>
 
         <a href="/reads"
-        class=" current overview break-words whitespace-nowrap text-2xl text-center font-display font-semibold p-2 text-green-400 bg-green-800 hover:bg-green-600 focus:bg-green-100">
+        class=" current overview break-words whitespace-nowrap text-2xl text-center font-display font-bold p-2 text-green-400 bg-green-800 hover:bg-green-600 focus:bg-green-100">
             /reads
         </a>
 
         <a href="/art" 
-          class="current overview break-words whitespace-nowrap text-2xl text-center font-display font-semibold p-2 text-pink-400 bg-pink-800 hover:bg-pink-600  focus:bg-pink-100">
+          class="current overview break-words whitespace-nowrap text-2xl text-center font-display font-bold p-2 text-pink-400 bg-pink-800 hover:bg-pink-600  focus:bg-pink-100">
             /art
         </a>
 
         <a href="/webdev" 
-        class="current overview break-words whitespace-nowrap text-2xl text-center font-display font-semibold p-2 text-blue-400 bg-blue-800 hover:bg-blue-600 focus:bg-{blue-100">
+        class="current overview break-words whitespace-nowrap text-2xl text-center font-display font-bold p-2 text-blue-400 bg-blue-800 hover:bg-blue-600 focus:bg-{blue-100">
             /webdev
         </a>
 
         <a href="/about" 
-        class="next overview break-words whitespace-nowrap text-2xl text-center font-display font-semibold p-2 text-gray-400 bg-gray-700 hover:bg-gray-600 focus:bg-gray-100">
+        class="next overview break-words whitespace-nowrap text-2xl text-center font-display font-bold p-2 text-gray-400 bg-gray-700 hover:bg-gray-600 focus:bg-gray-100">
             /contact
         </a>
     </div>
