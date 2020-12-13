@@ -19,7 +19,7 @@
     </style>
 </head>
 
-<body class="bg-gray-900">
+<body class="bg-gray-900 dark:bg-black">
     <div class="overviews overflow-hidden grid grid-cols-5 md:grid-cols-10 sm:gap-4 min-h-16 sm:my-4">
         <a href="/home"
             class="col-span-2 break-words whitespace-nowrap text-2xl text-center font-display font-bold p-2 text-red-400 bg-red-800 hover:bg-red-600  focus:bg-red-100">
@@ -52,12 +52,12 @@
         </a>
 
         <a href="/webdev" 
-        class="current overview break-words whitespace-nowrap text-2xl text-center font-display font-bold p-2 text-blue-400 bg-blue-800 hover:bg-blue-600 focus:bg-{blue-100">
+        class="current overview break-words whitespace-nowrap text-2xl text-center font-display font-bold p-2 text-blue-400 bg-blue-800 hover:bg-blue-600 focus:bg-blue-100">
             /webdev
         </a>
 
         <a href="/about" 
-        class="next overview break-words whitespace-nowrap text-2xl text-center font-display font-bold p-2 text-gray-400 bg-gray-700 hover:bg-gray-600 focus:bg-gray-100">
+        class="next overview break-words whitespace-nowrap text-2xl text-center font-display font-bold p-2 text-red-400 bg-red-800 hover:bg-red-600 focus:bg-red-100">
             /contact
         </a>
     </div>
@@ -65,24 +65,24 @@
     <div class="articles grid grid-cols-10 sm:grid-cols-8 sm:gap-4 h-full">
 
         <a href="{{prevurl}}" 
-            class="prev article z-10 overflow-hidden bg-{{prevcolor}}-800 hover:bg-{{prevcolor}}-700 focus:bg-{{prevcolor}}-600">
+            class="prev article z-10 overflow-hidden bg-{{prevcolor}}-900 hover:bg-{{prevcolor}}-700 focus:bg-{{prevcolor}}-600">
             <span class="block text-{{prevcolor}}-600 focus:text-{{prevcolor}}-500 text-12xl overflow-clip sm:align-middle text-right -mr-10">◄</span>
             <div class="invisible md:visible bg-{{prevcolor}}-200 hover:bg-{{prevcolor}}-100 focus:bg-{{prevcolor}}-50 -my-16 md:-my-24"><h3
                 class="text-{{prevcolor}}-800 font-display break-words md:break-normal font-medium text-2xl sm:my-6 lg: my-10 px-2 align-middle rotate-90 transform sm:rotate-0">
                 {{prevtitle}}</h3></div>
         </a>
 
-        <div class="current article z-20 bg-{{color}}-50 dark:bg-gray-800 col-span-8 sm:col-span-6 p-4 min-h-screen h-full text-lg py-16 md:p-24 lg:px-48">
-            <h1 class="text-{{color}}-800 dark:text-{{color}}-200 font-display font-semibold text-4xl sm:py-6 lg: py-10">{{title}}</h1>
-            <span class="block text-right text-{{color}}-800 dark:text-{{color}}-200 -mt-8">{{date}}</span></br>
-            <article class="text-gray-900 dark:text-{{color}}-200">
+        <div class="current article z-20 bg-{{color}}-50 dark:bg-gray-800 text-{{color}}-800 dark:text-gray-200 col-span-8 sm:col-span-6 p-4 min-h-screen h-full text-lg py-16 md:p-24 lg:px-48">
+            <h1 class="font-display font-semibold text-4xl sm:py-6 lg: py-10">{{title}}</h1>
+            <span class="block text-right -mt-8">{{date}}</span></br>
+            <article class="text-{{color}}-800 dark:text-gray-200">
             {% block content %}
             {% endblock %}
             </article>
         </div>
 
         <a href="{{nexturl}}"
-            class="next article z-10 overflow-hidden bg-{{nextcolor}}-800 hover:bg-{{nextcolor}}-700 focus:bg-{{nextcolor}}-600">
+            class="next article z-10 overflow-hidden bg-{{nextcolor}}-900 hover:bg-{{nextcolor}}-700 focus:bg-{{nextcolor}}-600">
             <span class="text-{{nextcolor}}-600 focus:text-{{nextcolor}}-500 text-12xl overflow-clip sm:align-middle -ml-10">►</span>
             <div class="invisible md:visible bg-{{nextcolor}}-200 hover:bg-{{nextcolor}}-100 focus:bg-{{nextcolor}}-50 -my-16 md:-my-24"><h3
                 class="text-{{nextcolor}}-800 font-display break-words md:break-normal font-medium text-2xl sm:my-6 lg: my-10 px-2 align-middle rotate-90 transform sm:rotate-0">

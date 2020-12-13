@@ -36,7 +36,7 @@ def article(page):
 ARTICLES = [
     ['spacesnake','/articles/spacesnake.html','Space Snake: Unleashed','blue','Dec 11, 2020'],
     ['website','/articles/website.html','Making this website using Flask and Heroku','blue','Dec 8, 2020'],
-    ['about','/articles/about.html','About me','gray','Dec 1, 2020']
+    ['about','/articles/about.html','About me','red','Dec 1, 2020']
     ]
 
 articlecount = len(ARTICLES)
