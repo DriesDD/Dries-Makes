@@ -665,6 +665,21 @@ see https://textik.com/#c88e7e73e6589fe6 */
         }
     }
 
+    function collisiondetect(x, y) {
+        let collision = false
+        if (document.getElementsByClassName('cell')[y * sw + x].classList.contains("bg-orange-900") ||
+            document.getElementsByClassName('cell')[y * sw + x].classList.contains("bg-green-600") ||
+            document.getElementsByClassName('cell')[y * sw + x].classList.contains("bg-amber-300") ||
+            document.getElementsByClassName('cell')[y * sw + x].classList.contains("bg-blue-500") ||
+            document.getElementsByClassName('cell')[y * sw + x].classList.contains("bg-blue-700") ||
+            document.getElementsByClassName('cell')[y * sw + x].classList.contains("bg-indigo-700") ||
+            document.getElementsByClassName('cell')[y * sw + x].classList.contains("bg-red-600")) {
+            collision = true
+        }
+        return collision
+    }
+
+
     async function moveplayer(currentgame) {
         if (currentgame == restarts) {
             if (tapkey == 'rrr') {
@@ -680,29 +695,55 @@ see https://textik.com/#c88e7e73e6589fe6 */
                 playery += 4
             }
             tapkey = tapkey.substr(0, Math.min(4, tapkey.length - 1));
-            
-            //using prevplayerdir makes it possible to make a tight turn quickly...
+
+            //instead of simply moving in movedir, player will move once in prevmovedir first if movedir would be a collision...
             let movedir = prevplayerdir;
-                switch (movedir) {
-                    case 'right':
-                        playerx += 1;
-                        break;
-                    case 'left':
-                        playerx -= 1;
-                        break;
-                    case 'up':
-                        playery -= 1;
-                        if (playery < 0) {
-                            playery += sh
-                        }
-                        break;
-                    case 'down':
-                        playery += 1;
-                        if (playery >= sh) {
-                            playery -= sh
-                        }
-                        break;
-                }
+            let plannedx = playerx;
+            let plannedy = playery;
+            switch (playerdir) {
+                case 'right':
+                    plannedx += 1;
+                    break;
+                case 'left':
+                    plannedx -= 1;
+                    break;
+                case 'up':
+                    plannedy -= 1;
+                    if (plannedy < 0) {
+                        plannedy += sh
+                    }
+                    break;
+                case 'down':
+                    plannedy += 1;
+                    if (plannedy >= sh) {
+                        plannedy -= sh
+                    }
+                    break;
+            }
+            if (collisiondetect(plannedx, plannedy) == false){
+                movedir = playerdir
+            }            
+
+            switch (movedir) {
+                case 'right':
+                    playerx += 1;
+                    break;
+                case 'left':
+                    playerx -= 1;
+                    break;
+                case 'up':
+                    playery -= 1;
+                    if (playery < 0) {
+                        playery += sh
+                    }
+                    break;
+                case 'down':
+                    playery += 1;
+                    if (playery >= sh) {
+                        playery -= sh
+                    }
+                    break;
+            }
             //Since after moving in the previous direction you automatically switch to current direction
             prevplayerdir = playerdir
 
@@ -717,18 +758,11 @@ see https://textik.com/#c88e7e73e6589fe6 */
     function updatepos() {
         if (playerx != oldplayerx || playery != oldplayery) {
             //collision detection with every enemy color and tail
-            if (document.getElementsByClassName('cell')[playery * sw + playerx].classList.contains("bg-orange-900") ||
-                document.getElementsByClassName('cell')[playery * sw + playerx].classList.contains("bg-green-600") ||
-                document.getElementsByClassName('cell')[playery * sw + playerx].classList.contains("bg-amber-300") ||
-                document.getElementsByClassName('cell')[playery * sw + playerx].classList.contains("bg-blue-500") ||
-                document.getElementsByClassName('cell')[playery * sw + playerx].classList.contains("bg-blue-700") ||
-                document.getElementsByClassName('cell')[playery * sw + playerx].classList.contains("bg-indigo-700") ||
-                document.getElementsByClassName('cell')[playery * sw + playerx].classList.contains("bg-red-600")) {
+            if (collisiondetect(playerx, playery) == true) {
                 loselife(1)
-
             };
-            //style the table cells to the player style
 
+            //style the table cells to the player style
             if (invincible == 1) {
                 restyle(oldplayerx, oldplayery, "bg-orange-600")
             } else {
