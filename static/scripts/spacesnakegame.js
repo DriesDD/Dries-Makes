@@ -46,7 +46,7 @@ see https://textik.com/#c88e7e73e6589fe6 */
     //define which color classes are enemies (needed to lose a life when hitting them)
     const enemycolors = [];
     //variables
-    let playerx, playery, playerdir, playerspeed,
+    let playerx, playery, playerdir, prevplayerdir, playerspeed,
         oldplayerx, oldplayery, xshift, tapkey,
         cycle, spawncycle, wave, bgcolor,
         gametime, interval, invincible, life, maxlife,
@@ -60,7 +60,7 @@ see https://textik.com/#c88e7e73e6589fe6 */
     //prevent the page from scrolling using the up and down keys, since those are used in game
     window.addEventListener("keydown", function (e) {
         // space and arrow keys
-        if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        if ([32, 37, 38, 39, 40].indexOf((e.key > -1) || (e.keyCode > -1))) {
             e.preventDefault();
         }
     }, false);
@@ -120,6 +120,7 @@ see https://textik.com/#c88e7e73e6589fe6 */
         oldplayerx = playerx;
         oldplayery = playery;
         playerdir = 'right';
+        prevplayerdir = 'none'
         tapkey = ''
         playerspeed = 160;
         life = 5;
@@ -162,26 +163,26 @@ see https://textik.com/#c88e7e73e6589fe6 */
     //the game is then started after clicking one of the menu difficulties
 
     $('normal').onclick = () => {
-            life = 5;
-            maxlife = 5;
-            difficulty = 1;
-            $('difficulty').innerText = 'Difficulty: hard';
-            gamestart()
-            }
+        life = 5;
+        maxlife = 5;
+        difficulty = 1;
+        $('difficulty').innerText = 'Difficulty: hard';
+        gamestart()
+    }
     $('hard').onclick = () => {
-            life = 3;
-            maxlife = 3;
-            difficulty = 2;
-            $('difficulty').innerText = 'Difficulty: super hard';
-            gamestart()
-            }
+        life = 3;
+        maxlife = 3;
+        difficulty = 2;
+        $('difficulty').innerText = 'Difficulty: super hard';
+        gamestart()
+    }
     $('extreme').onclick = () => {
-            life = 1;
-            maxlife = 1;
-            difficulty = 3;
-            $('difficulty').innerText = 'Difficulty: extreme';
-            gamestart()
-            }
+        life = 1;
+        maxlife = 1;
+        difficulty = 3;
+        $('difficulty').innerText = 'Difficulty: extreme';
+        gamestart()
+    }
 
     async function gamestart() {
         loselife(0);
@@ -202,7 +203,7 @@ see https://textik.com/#c88e7e73e6589fe6 */
     //   PART 2: the wave generator                 //
     //______________________________________________//
 
-     //this is the function where the waves are generated using an array of arrays (eventlist). First the order of the wave is randomly shuffled.
+    //this is the function where the waves are generated using an array of arrays (eventlist). First the order of the wave is randomly shuffled.
     //for enemy: eventtype, delay after previous,x,y,direction,speed, movement pattern, style, trail
     //for wave start: eventtype, delay after previous, background color
     //for message: eventtype, delay after previous, announcement
@@ -226,12 +227,12 @@ see https://textik.com/#c88e7e73e6589fe6 */
                 eventlist.push(['message', 0, 'They sent assassins to kill you, captain snake.']);
                 for (i = 0; i < 0.5 * (6 + wave + difficulty); i++) {
                     if (Math.random() > (1 / (difficulty / 2 + wave / 5))) {
-                        eventlist.push(['enemy', 15000 / (3 + wave/2 + difficulty/2), sw + 10, Math.round(Math.random() * sh), 'left', 1200 / (2 + 2 * difficulty + wave / 2), 'snake', "bg-red-600", "bg-space"])
+                        eventlist.push(['enemy', 15000 / (3 + wave / 2 + difficulty / 2), sw + 10, Math.round(Math.random() * sh), 'left', 1200 / (2 + 2 * difficulty + wave / 2), 'snake', "bg-red-600", "bg-space"])
                     } else {
                         if (Math.random() > 0.7) {
-                            eventlist.push(['enemy', 7000 / (3 + wave/2 + difficulty/2), sw + 10, Math.round(Math.random() * sh), 'up', 900 / (2 + 2 * difficulty + wave / 2), 'pursue', "bg-red-600", "bg-space"])
+                            eventlist.push(['enemy', 7000 / (3 + wave / 2 + difficulty / 2), sw + 10, Math.round(Math.random() * sh), 'up', 900 / (2 + 2 * difficulty + wave / 2), 'pursue', "bg-red-600", "bg-space"])
                         } else {
-                            eventlist.push(['enemy', 10000 / (3 + wave/2 + difficulty/2), sw + 10, Math.round(Math.random() * sh), 'left', 1000 / (2 + 2 * difficulty + wave / 2), 'block', "bg-red-600", "bg-space"])
+                            eventlist.push(['enemy', 10000 / (3 + wave / 2 + difficulty / 2), sw + 10, Math.round(Math.random() * sh), 'left', 1000 / (2 + 2 * difficulty + wave / 2), 'block', "bg-red-600", "bg-space"])
                         }
                     }
                 }
@@ -263,7 +264,7 @@ see https://textik.com/#c88e7e73e6589fe6 */
                 randy = Math.floor(Math.random() * sh);
                 randspeed = 300 + Math.floor(Math.random() * 100);
                 randsize = Math.ceil(1 + Math.random() * 5)
-                eventlist.push(['enemy', 1000 / ((2 + difficulty + wave/2) / 5), sw + 5, randy, 'left', randspeed, 'none', "bg-green-600", "bg-space"])
+                eventlist.push(['enemy', 1000 / ((2 + difficulty + wave / 2) / 5), sw + 5, randy, 'left', randspeed, 'none', "bg-green-600", "bg-space"])
                 for (j = 0; j < randsize * 2; j++) {
                     for (k = 0; k < randsize; k++) {
                         eventlist.push(['enemy', 0, sw + 5 - Math.round(randsize / 2) + j, randy + k, 'left', randspeed, 'none', "bg-green-600", "bg-space"]);
@@ -614,21 +615,25 @@ see https://textik.com/#c88e7e73e6589fe6 */
         switch (event.key) {
             case 'ArrowLeft':
                 if ((playerdir != 'right')) {
+                    prevplayerdir = playerdir
                     playerdir = 'left'
                 }
                 break;
             case 'ArrowUp':
                 if ((playerdir != 'down')) {
+                    prevplayerdir = playerdir
                     playerdir = 'up'
                 }
                 break;
             case 'ArrowRight':
                 if ((playerdir != 'left')) {
+                    prevplayerdir = playerdir
                     playerdir = 'right'
                 }
                 break;
             case 'ArrowDown':
                 if ((playerdir != 'up')) {
+                    prevplayerdir = playerdir
                     playerdir = 'down'
                 }
                 break;
@@ -675,29 +680,31 @@ see https://textik.com/#c88e7e73e6589fe6 */
                 playery += 4
             }
             tapkey = tapkey.substr(0, Math.min(4, tapkey.length - 1));
-
-            switch (playerdir) {
-                case 'right':
-                    playerx += 1;
-                    break;
-                case 'left':
-                    playerx -= 1;
-                    break;
-                case 'up':
-                    playery -= 1;
-                    if (playery < 0) {
-                        playery += sh
-                    }
-                    break;
-                case 'down':
-                    playery += 1;
-                    if (playery >= sh) {
-                        playery -= sh
-                    }
-                    break;
-            }
-
-
+            
+            //using prevplayerdir makes it possible to make a tight turn quickly...
+            let movedir = prevplayerdir;
+                switch (movedir) {
+                    case 'right':
+                        playerx += 1;
+                        break;
+                    case 'left':
+                        playerx -= 1;
+                        break;
+                    case 'up':
+                        playery -= 1;
+                        if (playery < 0) {
+                            playery += sh
+                        }
+                        break;
+                    case 'down':
+                        playery += 1;
+                        if (playery >= sh) {
+                            playery -= sh
+                        }
+                        break;
+                }
+            //Since after moving in the previous direction you automatically switch to current direction
+            prevplayerdir = playerdir
 
             updatepos()
             await timeout(playerspeed);
