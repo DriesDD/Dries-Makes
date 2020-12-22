@@ -32,8 +32,19 @@ def article(page):
         return render_template(pagedetails[1],
         article = pagedetails[1], title=pagedetails[2], color=pagedetails[3],cards=html)
 
+"""
+@app.route('/votestar/<path:dynamicPath>')
+def show_subpath(dynamicPath):
+   if dynamicPath == 'poll':
+      poll = .get(dynamicPath) #get your orders from db or files
+      return render_template('poll.html', poll=poll)
+   elif dynamicPath == 'otherStuff':
+      return "page not found"
+"""
+
 #every article is listed here as [URL resource name, HTML file path, title, color,date]
 ARTICLES = [
+    ['evomatrix','/articles/evomatrix.html','Python and the Meaning of Life','blue','Dec 22, 2020'],
     ['spacesnake','/articles/spacesnake.html','Space Snake: Unleashed','blue','Dec 11, 2020'],
     ['website','/articles/website.html','Making this website using Flask and Heroku','blue','Dec 8, 2020'],
     ['about','/articles/about.html','About me','red','Dec 1, 2020']
@@ -46,8 +57,8 @@ OVERVIEWS = [
     ['404','/overviews/404.html','Page not found!','red',[]],
     ['reads','/overviews/reads.html','Overview of reads','green',[]],
     ['art','/overviews/art.html','Art overview','pink',[]],
-    ['webdev','/overviews/webdev.html','Web dev overview','blue',['spacesnake','website']],
-    ['home','/overviews/home.html','All articles','red',['spacesnake','website','about']]
+    ['webdev','/overviews/webdev.html','Web dev overview','blue',['evomatrix','spacesnake','website']],
+    ['home','/overviews/home.html','All articles','red',['evomatrix','spacesnake','website','about']]
     ]
 
 #serve the file. This works on heroku after you CLI 'heroku config:set ON_HEROKU=1'

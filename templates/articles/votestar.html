@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<meta name="description" content="Blog post with tips on hosting a dynamic website with flask and heroku.">
+<meta name="keywords" content="Tutorial, guide, python, flask, heroku, hosting, dynamic, webdev, web development">
+{% endblock %}
+
+{% block content %}
+
+<form action="/votestar.php">
+    <label for="question">Title ☆</label><br>
+    <input type="text" id="question" name="question" value="Type your question here." class="bg-red-900"><br>
+
+    <input type="radio" id="1-Star" name="stars" value="1-star">
+    <label for="1-Star">★</label><br>
+    <input type="radio" id="3-Star" name="stars" value="3-star">
+    <label for="3-Star">★★★</label><br>
+    <input type="radio" id="5-Star" name="stars" value="5-star">
+    <label for="5-Star">★★★★★</label><br>
+
+    <input type="checkbox" id="nameconfirmation" name="nameconfirmation" value="Name">
+    <label for="nameconfirmation"> Voters must enter a name</label>
+    <br>
+    <input type="checkbox" id="nameconfirmation" name="nameconfirmation" value="Name">
+    <label for="nameconfirmation"> Voters can see how others voted </label>
+    <br>
+    <input type="checkbox" id="nameconfirmation" name="nameconfirmation" value="Name">
+    <label for="nameconfirmation"> Votes must be meaningful (can't vote same preference for all candidates) </label>
+    <br>
+    <h3>Voting ends in:</h3>
+    <input type="number" id="days" name="days" value="0" class="bg-red-900"> days, 
+    <input type="number" id="hours" name="hours" value="0" class="bg-red-900"> hours and 
+    <input type="number" id="minutes" name="minutes" value="10" class="bg-red-900"> minutes.</br>
+
+    <input type="radio" id="session" name="visibility" value="session">
+    <label for="session">Results are visible during voting</label><br>
+    <input type="radio" id="email" name="visibility" value="email">
+    <label for="email">Results become visible after poll closes</label><br> <br>  
+
+    <input type="radio" id="session" name="security" value="session">
+    <label for="session">Only one vote per browser session (not secure)</label><br>
+    <input type="radio" id="email" name="security" value="email">
+    <label for="email">Voters must confirm with a unique email address (more secure)</label><br>
+    <input type="radio" id="unique" name="security" value="unique">
+    <label for="unique">Create unique links for every voter (very secure)</label><br>
+
+    <input type="submit" value="Submit" class="bg-red-900"><br>
+
+    https://www.youtube.com/watch?v=yhO6jfHPFQU
+
+</form>
+
+{% endblock %}

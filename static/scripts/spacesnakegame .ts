@@ -120,8 +120,8 @@ see https://textik.com/#c88e7e73e6589fe6 */
         oldplayerx = playerx;
         oldplayery = playery;
         playerdir = 'right';
-        prevplayerdir = 'right';
-        tapkey = '';
+        prevplayerdir = 'none'
+        tapkey = ''
         playerspeed = 160;
         life = 5;
         maxlife = 5;
