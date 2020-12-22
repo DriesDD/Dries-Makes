@@ -47,7 +47,7 @@ ARTICLES = [
     ['life','/articles/life.html','Python and the Meaning of Life','blue','Dec 22, 2020'],
     ['spacesnake','/articles/spacesnake.html','Space Snake: Unleashed','blue','Dec 11, 2020'],
     ['website','/articles/website.html','Making this website using Flask and Heroku','blue','Dec 8, 2020'],
-    ['about','/articles/about.html','About me','red','Dec 1, 2020']
+    ['who','/articles/about.html','Who?','red','Dec 1, 2020']
     ]
 
 articlecount = len(ARTICLES)
@@ -55,10 +55,10 @@ articlecount = len(ARTICLES)
 #every overview is listed here as [URL resource name, HTML file path, title, color, [articles]]
 OVERVIEWS = [
     ['404','/overviews/404.html','Page not found!','red',[]],
-    ['reads','/overviews/reads.html','Overview of reads','green',[]],
+    ['DIY','/overviews/DIY.html','DIY overview','green',[]],
     ['art','/overviews/art.html','Art overview','pink',[]],
-    ['webdev','/overviews/webdev.html','Development overview','blue',['life','spacesnake','website']],
-    ['home','/overviews/home.html','All articles','red',['life','spacesnake','website','about']]
+    ['dev','/overviews/dev.html','Development overview','blue',['life','spacesnake','website']],
+    ['home','/overviews/home.html','All articles','red',['life','spacesnake','website','who']]
     ]
 
 #serve the file. This works on heroku after you CLI 'heroku config:set ON_HEROKU=1'

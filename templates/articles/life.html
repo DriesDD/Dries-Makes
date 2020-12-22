@@ -15,10 +15,10 @@
 
 <p>Simulating life on a computer means throwing overboard almost all complexity. The interesting exercise is in choosing what to keep, like trying to summarize a book in one sentence. Some of my favorite life experiments which you can try online are:</p> 
 <ul>
-<li><a href="https://playgameoflife.com/"><u>Conway's Game of Life</u></a>, where cells sprout in and out of existence according to the number of neighbouring cells. From these most simple mathematical rules emerge larger structures. There is no evolution and only one 'cell type' but it laid the foundation for many other <i>cellular automata</i>.</li>
-<li><a href="https://thelifeengine.net/"><u>The Life Engine</u></a>, which simulates evolution and ecosystems. Cells come in a discrete number of functions to form functioning multicellular lifeforms. Intelligent design is recommended to speed things up.
+<li><a href="https://playgameoflife.com/">Conway's Game of Life</a>, where cells sprout in and out of existence according to the number of neighbouring cells. From these most simple mathematical rules emerge larger structures. There is no evolution and only one 'cell type' but it laid the foundation for many other <i>cellular automata</i>.</li>
+<li><a href="https://thelifeengine.net/">The Life Engine</a>, which simulates evolution and ecosystems. Cells come in a discrete number of functions to form functioning multicellular lifeforms. Intelligent design is recommended to speed things up.
 </li>
-<li><a href="https://labs.minutelabs.io/evolution-simulator"><u>The minutelabs evolution simulator</u></a>, if only because it was based on a youtube channel called Primer, which wonderfully explains what is going on. </li>
+<li><a href="https://labs.minutelabs.io/evolution-simulator">The minutelabs evolution simulator</a>, if only because it was based on a youtube channel called Primer, which wonderfully explains what is going on. </li>
 </ul>
 
 <p>The first simulations I made long before knowing what else is out there. It's one of those ideas where many people do sort of the same thing without knowing about eachother. As a teenager, I made my simulations in a tool called Game Maker, which was a lot of fun. I made one simulation for optimal eye placement on some swimming circle creatures, one for group selection and social behavior, and a few with the goal of creating lush ecosystems.</p>
@@ -33,7 +33,7 @@
 <p>I tried to keep it simple. It is easy to get interesting results by introducing a lot of variation in creatures and environment. The goal however, is not to code the complexity, but to have it emerge from the simplest possible rules. Still, I know it's a succesful simulation of life because the main features (Birth, Growth, Fighting and Death) are all chapters in Monty Python's "The Meaning of Life". And that's as good a definition as any.</p>
 <p>There is a single environment, a 50*50 grid which wraps around the sides. Every square on the grid can hold one cell. Every cell has 3 genes: speed, diet and power. Each gene does one thing only and is expressed by one base color (red, green and blue). This way, the mixed rgb color of the cell tells you exactly what its genes are.</p>
 <p>There is one more value: energy, which is spent by moving, being strong, living and gained by feeding. It's represented as the size of the cell. Reproduction happens if there is an adjacent free spot, asexually when reaching a certain energy treshold, and transfers part of this energy to a new organism with the same genes but slightly mutated.</p>
-<p>You can find the code <a href="https://github.com/DriesDD/evomatrix"><u>here</u></a>. The phenomena that can arise from these simple rules are already very interesting. Let's run it and see what happens.</p>
+<p>You can find the code <a href="https://github.com/DriesDD/evomatrix">here</a>. The phenomena that can arise from these simple rules are already very interesting. Let's run it and see what happens.</p>
 
 <video controls>
     <source src="../../static/vid/evomatrix.webm" type="video/webm">

@@ -47,13 +47,17 @@ CSS:
   li {
     @apply mb-1 ml-8 ;
   }
-  u {
+  u{
     @apply underline ;
   }
   i {
     @apply italic ;
   }
   b {
+    @apply font-bold ;
+  }
+  article a {
+    @apply underline ;
     @apply font-bold ;
   }
   

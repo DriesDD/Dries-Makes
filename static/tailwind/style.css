@@ -221,7 +221,9 @@ select { /* 1 */
 Correct the inability to style clickable types in iOS and Safari.
 */
 
-button {
+button,
+[type='button'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -262,6 +264,11 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
 
 /**
 Remove the inner padding in Chrome and Safari on macOS.
@@ -605,7 +612,7 @@ li {
   margin-left: 2rem;
 }
 
-u {
+u{
   text-decoration: underline;
 }
 
@@ -614,6 +621,11 @@ i {
 }
 
 b {
+  font-weight: 700;
+}
+
+article a {
+  text-decoration: underline;
   font-weight: 700;
 }
 
@@ -1227,11 +1239,6 @@ b {
   color: rgba(31, 41, 55, var(--tw-text-opacity));
 }
 
-.text-gray-900 {
-  --tw-text-opacity: 1;
-  color: rgba(17, 24, 39, var(--tw-text-opacity));
-}
-
 .text-red-200 {
   --tw-text-opacity: 1;
   color: rgba(254, 202, 202, var(--tw-text-opacity));
@@ -1265,11 +1272,6 @@ b {
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgba(5, 150, 105, var(--tw-text-opacity));
-}
-
-.text-green-700 {
-  --tw-text-opacity: 1;
-  color: rgba(4, 120, 87, var(--tw-text-opacity));
 }
 
 .text-green-800 {
@@ -1381,10 +1383,6 @@ b {
 
 .overflow-clip {
   text-overflow: clip;
-}
-
-.underline {
-  text-decoration: underline;
 }
 
 .align-middle {
