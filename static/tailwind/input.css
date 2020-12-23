@@ -32,6 +32,11 @@ CSS:
   img {
     @apply min-w-full max-w-full transform;
   }
+
+  picture img {
+    @apply min-w-0 min-h-0 max-h-screen max-w-full transform;
+  }
+
   p {
     @apply mb-4;
   }
