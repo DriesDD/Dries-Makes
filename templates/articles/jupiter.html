@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<meta name="description" content="Jupiter image edit.">
+<meta name="keywords" content="jupiter, astronomy, image editing">
+{% endblock %}
+
+{% block content %}
+
+<p>I came across this cool image of Jupiter on reddit.</p>
+<picture>
+<img src="../../static/img/jupiter/0.png">
+</br>
+<p>Using reverse image search, I couldn't find where it came from, except that it was a picture from the NASA Juno mission. So I searched the NASA website and found a sharper but less colourful version:</p>
+<img src="../../static/img/jupiter/1.png">
+</br>
+<p>You can find it <a href="https://www.missionjuno.swri.edu/junocam/processing?id=9123">here.</a></p>
+
+<p>Turns out it isn't really a photo.</p>
+<p>It uses real space photos, but a software engineer/ data and image processor at NASA by the name of <a href="https://linktr.ee/Kevinmgill">Kevin Gill</a> maps those images onto 3D models. The relief is exaggerated by raising the bright spots and sinking the dark spots. Looks extremely cool, if you ask me.
+</p>
+<p>Since these images are already heavily edited, I took the liberty of turning it up to 11. In GIMP, I increased the saturation and contrast,I also increased the colour temperature of the foreground and decreased the colour temperature of the far away parts. Then I used <a href="https://github.com/nagadomi/waifu2x">a neural network image scaling tool</a> to intelligently double the resolution and make the image usable as a desktop background.</p>
+<a href="../../static/img/jupiter/2.png">
+<img src="../../static/img/jupiter/2.png">
+</a>
+<p>You can click the image to see it in full size. </p>
+<p>This is definitely the least work I've put into a blog post yet, but I thought the final result was too pretty not to share.</p>
+<p>And maybe it's also a good reminder that most pretty space pictures are at the very least colour-enhanced, but there's nothing wrong with that.</p>
+</picture>
+</br>
+<p>Image rights: Creative Commons</p>
+
+{% endblock %}
