@@ -560,6 +560,7 @@ h2 {
 }
 
 img {
+  background-size: cover;
   max-width: 100%;
   min-width: 100%;
   --tw-translate-x: 0;

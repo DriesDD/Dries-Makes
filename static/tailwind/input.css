@@ -30,7 +30,7 @@ CSS:
     @apply font-display ml-4 mb-8 mt-4 text-3xl font-bold;
   }
   img {
-    @apply min-w-full max-w-full transform;
+    @apply min-w-full max-w-full transform bg-cover bg-gray-500;
   }
 
   picture img {
