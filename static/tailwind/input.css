@@ -65,5 +65,8 @@ CSS:
     @apply underline ;
     @apply font-bold ;
   }
+  div {
+    @apply bg-cover ;
+  }
   
 }
