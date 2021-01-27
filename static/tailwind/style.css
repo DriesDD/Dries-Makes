@@ -550,7 +550,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
-h2 {
+article h2 {
   font-family: Quicksand, sans-serif;
   font-weight: 700;
   font-size: 1.875rem;
@@ -560,6 +560,8 @@ h2 {
 }
 
 img {
+  --tw-bg-opacity: 1;
+  background-color: rgba(107, 114, 128, var(--tw-bg-opacity));
   background-size: cover;
   max-width: 100%;
   min-width: 100%;
@@ -1324,9 +1326,9 @@ div {
   color: rgba(251, 207, 232, var(--tw-text-opacity));
 }
 
-.text-pink-400 {
+.text-pink-300 {
   --tw-text-opacity: 1;
-  color: rgba(244, 114, 182, var(--tw-text-opacity));
+  color: rgba(249, 168, 212, var(--tw-text-opacity));
 }
 
 .text-pink-600 {
