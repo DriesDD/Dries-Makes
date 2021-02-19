@@ -44,7 +44,7 @@ def show_subpath(dynamicPath):
 
 #every article is listed here as [URL resource name, HTML file path, title, color,date]
 ARTICLES = [
-    ['unweaving','/articles/unweaving.html','Aztec Metaphysics Box Art','green','Feb 19, 2021'],
+    ['unweaving','/articles/unweaving.html','Aztec Metaphysics Boardgame Box Art','green','Feb 19, 2021'],
     ['soap','/articles/soap.html','Honeycomb Soap','green','Jan 22, 2021'],
     ['jupiter','/articles/jupiter.html','Jupiter whirls','pink','Jan 3, 2021'],
     ['economy','/articles/economy.html','What is the economy?','pink','Dec 23, 2020'],
