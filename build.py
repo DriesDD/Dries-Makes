@@ -44,6 +44,7 @@ def show_subpath(dynamicPath):
 
 #every article is listed here as [URL resource name, HTML file path, title, color,date]
 ARTICLES = [
+    ['words','/articles/words.html','Words on things are overpowered','pink','Jul 27, 2021'],
     ['unweaving','/articles/unweaving.html','Aztec Metaphysics Boardgame Box Art','green','Feb 19, 2021'],
     ['soap','/articles/soap.html','Honeycomb Soap','green','Jan 22, 2021'],
     ['jupiter','/articles/jupiter.html','Jupiter whirls','pink','Jan 3, 2021'],
@@ -60,9 +61,9 @@ articlecount = len(ARTICLES)
 OVERVIEWS = [
     ['404','/overviews/404.html','Page not found!','red',[]],
     ['DIY','/overviews/DIY.html','DIY overview','green',['unweaving','soap']],
-    ['art','/overviews/art.html','Art overview','pink',['unweaving','jupiter','economy']],
+    ['art','/overviews/art.html','Art overview','pink',['words','unweaving','jupiter','economy']],
     ['dev','/overviews/dev.html','Development overview','blue',['life','spacesnake','website']],
-    ['home','/overviews/home.html','All articles','red',['unweaving','soap','jupiter','economy','life','spacesnake','website','who']]
+    ['home','/overviews/home.html','All articles','red',['words','unweaving','soap','jupiter','economy','life','spacesnake','website','who']]
     ]
 
 #serve the file. This works on heroku after you CLI 'heroku config:set ON_HEROKU=1'
