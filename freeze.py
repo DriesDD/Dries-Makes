@@ -3,7 +3,7 @@ from build import app, ARTICLES, OVERVIEWS
 
 freezer = Freezer(app)
 
-app.config['FREEZER_DESTINATION'] = 'frozen'
+app.config['FREEZER_DESTINATION'] = 'DriesDD.github.io'
 
 @freezer.register_generator
 def page_url_generator():
