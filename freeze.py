@@ -4,7 +4,7 @@ import os
 
 freezer = Freezer(app)
 
-app.config['FREEZER_DESTINATION'] = 'DriesDD.github.io'
+app.config['FREEZER_DESTINATION'] = 'docs'
 
 @freezer.register_generator
 def page_url_generator():
